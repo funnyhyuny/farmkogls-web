@@ -13,3 +13,4 @@ __*.html
 
 # 미사용 스크린샷
 assets/Screenshot*
+.vercel

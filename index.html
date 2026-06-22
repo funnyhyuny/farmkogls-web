@@ -87,6 +87,8 @@
   .gnb>li.eserv:hover>a{color:var(--accent)}
   .btn-eserv{background:linear-gradient(135deg,var(--accent),var(--sky));color:#fff;box-shadow:0 6px 16px rgba(0,165,229,.32)}
   .btn-eserv:hover{background:linear-gradient(135deg,var(--accent),var(--blue));color:#fff;transform:translateY(-2px)}
+  /* FES(Far East Shipping) 인라인 마크 — E-Service 식별 마크 */
+  .fes-ic{height:1.35em;width:auto;vertical-align:middle;margin:-.14em .36em -.18em 0;background:#fff;border-radius:5px;padding:1.5px;box-sizing:border-box;box-shadow:0 1px 2px rgba(10,37,64,.12)}
 
   /* ===== HERO ===== */
   .hero{position:relative;min-height:640px;display:flex;align-items:center;color:#fff;overflow:hidden;
@@ -116,10 +118,11 @@
   /* ===== 선박 스케줄·부킹 강조 배너 ===== */
   .book-cta{display:flex;align-items:center;gap:26px;background:linear-gradient(115deg,var(--navy) 0%,var(--navy-2) 45%,var(--blue) 100%);border-radius:20px;box-shadow:0 22px 55px rgba(10,37,64,.28);padding:34px 40px;color:#fff;position:relative;overflow:hidden;transition:.28s}
   .book-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(620px 240px at 88% -25%,rgba(0,165,229,.5),transparent 60%),radial-gradient(420px 240px at 4% 130%,rgba(0,194,168,.4),transparent 60%);opacity:.75}
-  .book-cta::after{content:"⚓";position:absolute;right:6px;bottom:-34px;font-size:175px;line-height:1;opacity:.07}
+  .book-cta::after{content:"";position:absolute;right:18px;bottom:-22px;width:172px;height:172px;background:url('assets/fes-mark.svg') center/contain no-repeat;opacity:.07}
   .book-cta:hover{transform:translateY(-6px);box-shadow:0 30px 72px rgba(10,37,64,.36)}
   .book-cta>*{position:relative;z-index:1}
-  .book-ic{width:78px;height:78px;border-radius:20px;background:linear-gradient(135deg,var(--accent),var(--sky));display:grid;place-items:center;font-size:40px;flex-shrink:0;box-shadow:0 10px 26px rgba(0,165,229,.45)}
+  .book-ic{width:78px;height:78px;border-radius:18px;background:#fff;display:grid;place-items:center;flex-shrink:0;box-shadow:0 10px 26px rgba(0,0,0,.20);padding:11px}
+  .book-ic img{width:100%;height:100%;object-fit:contain;display:block}
   .book-txt{flex:1;min-width:0}
   .book-txt .be{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.16em;color:#7fdcff;margin-bottom:8px}
   .book-txt h3{font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1.25;margin-bottom:9px}
@@ -294,7 +297,7 @@
     .hero-actions .btn{padding:12px 18px;font-size:14.5px}
     .quickbar{margin-top:-40px}
     .book-cta{padding:26px 20px}
-    .book-ic{width:64px;height:64px;font-size:32px}
+    .book-ic{width:64px;height:64px;padding:9px}
     .book-txt h3{font-size:20px}
     .book-txt p{font-size:14px}
     .book-go{font-size:15px;padding:13px 24px}
@@ -313,7 +316,7 @@
     <span class="sep"></span>
     <a href="#" data-lang-btn="en">ENGLISH</a>
     <span class="sep"></span>
-    <a href="eservice.html" class="eserv-top" data-en="⚓ E-Service Booking">⚓ E-Service 부킹</a>
+    <a href="eservice.html" class="eserv-top" data-en="<img class='fes-ic' src='assets/fes-mark.svg' alt='FES'> E-Service Booking"><img class='fes-ic' src='assets/fes-mark.svg' alt='FES'> E-Service 부킹</a>
     <a href="eservice.html#schedule" data-en="🚢 Sailing Schedule">🚢 선박 스케줄</a>
   </div>
 </div>
@@ -357,7 +360,7 @@
           </div>
         </li>
         <li class="eserv">
-          <a href="eservice.html" data-en="⚓ E-Service<span class='nb'>BOOKING</span>">⚓ E-Service<span class="nb">부킹</span></a>
+          <a href="eservice.html" data-en="<img class='fes-ic' src='assets/fes-mark.svg' alt='FES'> E-Service<span class='nb'>BOOKING</span>"><img class='fes-ic' src='assets/fes-mark.svg' alt='FES'> E-Service<span class="nb">부킹</span></a>
           <div class="submenu">
             <a href="eservice.html#schedule" data-en="Sailing Schedule">선박 스케줄</a>
             <a href="https://farmkogls.plism.com/" target="_blank" rel="noopener" data-en="PLISM Booking">PLISM 부킹 바로가기</a>
@@ -408,7 +411,7 @@
     <p data-en="From international transport to special cargo, the Busan New Port Logistics Center and shipping agency services, we deliver total logistics solutions that strengthen the competitiveness of export and import companies.">국제운송부터 특수화물, 부산신항 물류센터, 해운 에이전트까지,
        수출입 기업의 경쟁력을 높이는 종합 물류 솔루션을 제공합니다.</p>
     <div class="hero-actions">
-      <a href="eservice.html" class="btn btn-primary" data-en="⚓ Sailing Schedule &amp; Booking →">⚓ 선박 스케줄 · 부킹 →</a>
+      <a href="eservice.html" class="btn btn-primary" data-en="Sailing Schedule &amp; Booking →">선박 스케줄 · 부킹 →</a>
       <a href="#business" class="btn btn-ghost" data-en="View Business">사업분야 보기</a>
     </div>
   </div>
@@ -418,7 +421,7 @@
 <div class="quickbar">
   <div class="container">
     <a href="eservice.html" class="book-cta">
-      <div class="book-ic">⚓</div>
+      <div class="book-ic"><img src="assets/fes-mark.svg" alt="FES" /></div>
       <div class="book-txt">
         <span class="be" data-en="E-SERVICE · ONLINE BOOKING">E-SERVICE · 온라인 부킹</span>
         <h3 data-en="Sailing Schedule &amp; Online Booking">선박 스케줄 조회 &amp; 온라인 부킹</h3>
@@ -740,7 +743,7 @@
       </div>
       <div class="foot-col">
         <h5 data-en="Customer Support">고객지원</h5>
-        <a href="eservice.html" data-en="⚓ E-Service Booking">⚓ E-Service 부킹</a>
+        <a href="eservice.html" data-en="<img class='fes-ic' src='assets/fes-mark.svg' alt='FES'> E-Service Booking"><img class='fes-ic' src='assets/fes-mark.svg' alt='FES'> E-Service 부킹</a>
         <a href="eservice.html#schedule" data-en="Sailing Schedule">선박 스케줄</a>
         <a href="eservice.html#process" data-en="Booking Process">부킹 절차 안내</a>
         <a href="careers.html" data-en="Careers">인재채용</a>
