@@ -41,14 +41,11 @@ img{max-width:100%;display:block}
 .logo .mark img{width:100%;height:100%;object-fit:contain;display:block}
 .logo small{display:block;font-size:10.5px;font-weight:600;color:var(--gray);letter-spacing:.16em}
 .subnav{display:flex;gap:4px;flex-wrap:wrap}
-.subnav a{padding:9px 14px;border-radius:8px;font-size:15px;font-weight:600;color:var(--ink);transition:.18s}
+.subnav a{padding:9px 11px;border-radius:8px;font-size:14px;font-weight:600;color:var(--ink);transition:.18s}
 .subnav a:hover{background:var(--bg);color:var(--blue)}
 .subnav a.active{color:var(--blue);background:rgba(0,114,206,.08)}
-.subnav a.eserv{padding:8px 15px;border-radius:999px;color:#fff;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--sky));box-shadow:0 5px 14px rgba(0,165,229,.30)}
-.subnav a.eserv:hover{color:#fff;background:linear-gradient(135deg,var(--accent),var(--blue))}
-.subnav a.eserv.active{color:#fff}
 /* FES(Far East Shipping) 인라인 마크 — E-Service 식별 마크 */
-.fes-ic{display:inline-block;height:1.25em;width:auto;vertical-align:-0.28em;margin:0 .34em 0 0;background:#fff;border-radius:5px;padding:1.5px;box-sizing:border-box;box-shadow:0 1px 2px rgba(10,37,64,.12)}
+.fes-ic{display:inline-block;height:1.3em;width:auto;vertical-align:-0.3em;margin:0 .3em 0 0}
 .subhead .home{font-size:14px;color:var(--gray);white-space:nowrap}
 .subhead .home:hover{color:var(--blue)}
 .subhead-right{display:flex;align-items:center;gap:14px}
