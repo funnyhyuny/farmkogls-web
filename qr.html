@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FARMKO GLS 홈페이지 QR | farmko.co.kr</title>
+<link rel="icon" type="image/png" href="assets/farmko-mark.png" />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<style>
+  :root{ --navy:#0a2540; --blue:#0072ce; --sky:#00a5e5; --accent:#00c2a8; --gray:#5b6b7b; --line:#e4e9ef; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Pretendard','Apple SD Gothic Neo',system-ui,sans-serif;color:var(--navy);
+    background:linear-gradient(135deg,#eef5fb,#f7fbff);min-height:100vh;display:grid;place-items:center;padding:32px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:28px;box-shadow:0 24px 60px rgba(10,37,64,.14);
+    width:100%;max-width:480px;text-align:center;padding:44px 40px 38px;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:8px;background:linear-gradient(90deg,var(--blue),var(--sky),var(--accent))}
+  .brand{display:flex;align-items:center;justify-content:center;gap:11px;margin-bottom:8px}
+  .brand img{width:46px;height:46px;object-fit:contain}
+  .brand b{font-size:23px;font-weight:800;letter-spacing:-.01em}
+  .brand b small{display:block;font-size:11px;font-weight:600;color:var(--gray);letter-spacing:.18em}
+  .eyebrow{color:var(--blue);font-weight:800;letter-spacing:.14em;font-size:12.5px;margin-top:18px;text-transform:uppercase}
+  h1{font-size:27px;font-weight:800;letter-spacing:-.02em;margin:8px 0 4px}
+  .sub{color:var(--gray);font-size:15px;margin-bottom:26px}
+  .qrbox{display:inline-block;padding:18px;border:1px solid var(--line);border-radius:20px;background:#fff}
+  .qrbox img{width:300px;height:300px;display:block}
+  .scan{margin-top:22px;font-size:15.5px;color:var(--navy);font-weight:700}
+  .scan span{color:var(--blue)}
+  .url{margin-top:8px;display:inline-block;font-size:15px;font-weight:800;color:#fff;
+    background:linear-gradient(135deg,var(--navy),var(--blue));padding:9px 20px;border-radius:999px;letter-spacing:.02em}
+  .foot{margin-top:24px;color:#9aa8b6;font-size:12.5px}
+  .actions{margin-top:22px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .btn{border:1px solid var(--line);background:#fff;color:var(--navy);font-weight:700;font-size:14px;
+    padding:11px 18px;border-radius:999px;cursor:pointer;text-decoration:none;transition:.18s}
+  .btn:hover{border-color:var(--blue);color:var(--blue)}
+  .btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+  @media print{
+    body{background:#fff;padding:0}
+    .card{box-shadow:none;border:none;max-width:none}
+    .actions{display:none}
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="brand">
+      <img src="assets/farmko-mark.png" alt="FARMKO GLS" />
+      <b>FARMKO GLS<small>팜코지엘에스</small></b>
+    </div>
+    <div class="eyebrow">Homepage</div>
+    <h1>홈페이지 바로가기</h1>
+    <p class="sub">스마트폰 카메라로 아래 QR을 스캔하세요</p>
+
+    <div class="qrbox">
+      <img src="assets/qr-farmko.svg" alt="farmko.co.kr QR 코드" />
+    </div>
+
+    <div class="scan">📷 <span>스캔</span>하면 홈페이지로 이동합니다</div>
+    <div class="url">farmko.co.kr</div>
+
+    <div class="actions">
+      <a class="btn primary" href="assets/qr-farmko.png" download="farmko-qr.png">QR 이미지 저장(PNG)</a>
+      <a class="btn" href="assets/qr-farmko.svg" download="farmko-qr.svg">인쇄용(SVG)</a>
+      <button class="btn" onclick="window.print()">인쇄</button>
+    </div>
+    <p class="foot">FARMKO GLS · https://farmko.co.kr</p>
+  </div>
+</body>
+</html>
