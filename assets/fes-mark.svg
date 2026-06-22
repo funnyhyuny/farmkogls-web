@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 116" width="124" height="116" role="img" aria-label="FES Far East Shipping">
   <defs>
     <clipPath id="fesSh">
-      <path d="M63 7 C92 8 114 22 116 48 C117 80 106 100 63 110 C20 100 9 80 10 48 C12 22 34 8 63 7 Z"/>
+      <path d="M22 8 Q62 5 102 8 Q118 9 118 27 C118 60 101 88 62 109 C23 88 6 60 6 27 Q6 9 22 8 Z"/>
     </clipPath>
     <filter id="fesShadow" x="-15%" y="-20%" width="130%" height="150%">
       <feDropShadow dx="0" dy="1.4" stdDeviation="1.5" flood-color="#0a2950" flood-opacity="0.45"/>
