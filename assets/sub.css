@@ -18,7 +18,7 @@
   --shadow:0 10px 35px rgba(10,37,64,.10);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;overflow-x:clip}
+html{scroll-behavior:smooth;overflow-x:clip;scroll-padding-top:128px}
 body{overflow-x:clip}
 body{
   font-family:'Pretendard','Apple SD Gothic Neo',system-ui,sans-serif;

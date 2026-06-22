@@ -26,7 +26,7 @@
     --shadow:0 10px 35px rgba(10,37,64,.10);
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;overflow-x:clip}
+  html{scroll-behavior:smooth;overflow-x:clip;scroll-padding-top:92px}
   body{overflow-x:clip}
   body{
     font-family:'Pretendard','Apple SD Gothic Neo',system-ui,sans-serif;
@@ -65,9 +65,9 @@
   .logo small{display:block;font-size:11px;font-weight:600;color:var(--gray);letter-spacing:.18em}
   .gnb{display:flex;gap:1px;height:100%}
   .gnb>li{position:relative;display:flex;align-items:center}
-  .gnb>li>a{padding:0 13px;height:100%;display:flex;align-items:center;font-weight:600;font-size:15px;color:var(--ink);transition:.2s;white-space:nowrap}
+  .gnb>li>a{padding:0 11px;height:100%;display:flex;align-items:center;font-weight:600;font-size:14.5px;color:var(--ink);transition:.2s;white-space:nowrap}
   .gnb>li:hover>a{color:var(--blue)}
-  .gnb>li::after{content:"";position:absolute;left:13px;right:13px;bottom:24px;height:3px;background:var(--blue);border-radius:3px;transform:scaleX(0);transition:.25s;transform-origin:left}
+  .gnb>li::after{content:"";position:absolute;left:11px;right:11px;bottom:24px;height:3px;background:var(--blue);border-radius:3px;transform:scaleX(0);transition:.25s;transform-origin:left}
   .gnb>li:hover::after{transform:scaleX(1)}
   .submenu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(10px);min-width:210px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:10px;opacity:0;visibility:hidden;transition:.22s}
   .gnb>li:hover .submenu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(8px)}
@@ -329,31 +329,31 @@
     <nav>
       <ul class="gnb" id="gnb">
         <li>
-          <a href="company.html" target="_blank" rel="noopener" data-en="Company">회사소개</a>
+          <a href="company.html" data-en="Company">회사소개</a>
           <div class="submenu">
-            <a href="company.html#ceo" target="_blank" rel="noopener" data-en="CEO Message">CEO 인사말</a>
-            <a href="company.html#vision" target="_blank" rel="noopener" data-en="Philosophy &amp; Vision">경영이념 · 비전</a>
-            <a href="company.html#history" target="_blank" rel="noopener" data-en="History">연혁 (History)</a>
-            <a href="company.html#ci" target="_blank" rel="noopener" data-en="Corporate Identity">CI 소개</a>
-            <a href="company.html#location" target="_blank" rel="noopener" data-en="Location">오시는 길</a>
+            <a href="company.html#ceo" data-en="CEO Message">CEO 인사말</a>
+            <a href="company.html#vision" data-en="Philosophy &amp; Vision">경영이념 · 비전</a>
+            <a href="company.html#history" data-en="History">연혁 (History)</a>
+            <a href="company.html#ci" data-en="Corporate Identity">CI 소개</a>
+            <a href="company.html#location" data-en="Location">오시는 길</a>
           </div>
         </li>
         <li>
-          <a href="business.html" target="_blank" rel="noopener" data-en="Business">사업분야</a>
+          <a href="business.html" data-en="Business">사업분야</a>
           <div class="submenu">
-            <a href="business.html#sea-air" target="_blank" rel="noopener" data-en="International Transport (Sea &amp; Air)">국제운송 (Sea &amp; Air)</a>
-            <a href="business.html#special" target="_blank" rel="noopener" data-en="Special Cargo">특수화물</a>
-            <a href="business.html#nvocc" target="_blank" rel="noopener">NVOCC</a>
-            <a href="business.html#cfs" target="_blank" rel="noopener" data-en="Warehousing · CY/CFS">보관 · CY/CFS</a>
-            <a href="business.html#agency" target="_blank" rel="noopener" data-en="Shipping Agency">해운에이전트</a>
+            <a href="business.html#sea-air" data-en="International Transport (Sea &amp; Air)">국제운송 (Sea &amp; Air)</a>
+            <a href="business.html#special" data-en="Special Cargo">특수화물</a>
+            <a href="business.html#nvocc">NVOCC</a>
+            <a href="business.html#cfs" data-en="Warehousing · CY/CFS">보관 · CY/CFS</a>
+            <a href="business.html#agency" data-en="Shipping Agency">해운에이전트</a>
           </div>
         </li>
         <li>
-          <a href="center.html" target="_blank" rel="noopener" data-en="Logistics Center">물류센터</a>
+          <a href="center.html" data-en="Logistics">물류센터</a>
           <div class="submenu">
-            <a href="center.html#overview" target="_blank" rel="noopener" data-en="Busan New Port Logistics Center">부산신항 물류센터</a>
-            <a href="center.html#facility" target="_blank" rel="noopener" data-en="Facilities">시설 안내</a>
-            <a href="center.html#service" target="_blank" rel="noopener" data-en="Storage &amp; Quarantine">보관 · 검역 서비스</a>
+            <a href="center.html#overview" data-en="Busan New Port Logistics Center">부산신항 물류센터</a>
+            <a href="center.html#facility" data-en="Facilities">시설 안내</a>
+            <a href="center.html#service" data-en="Storage &amp; Quarantine">보관 · 검역 서비스</a>
           </div>
         </li>
         <li class="eserv">
@@ -365,27 +365,27 @@
           </div>
         </li>
         <li>
-          <a href="esg.html" target="_blank" rel="noopener" data-en="Sustainability">지속가능경영</a>
+          <a href="esg.html" data-en="ESG">지속가능경영</a>
           <div class="submenu">
-            <a href="esg.html#esg" target="_blank" rel="noopener" data-en="ESG Management">ESG 경영</a>
-            <a href="esg.html#safety" target="_blank" rel="noopener" data-en="Safety &amp; Quality">안전 · 품질</a>
-            <a href="esg.html#csr" target="_blank" rel="noopener" data-en="Social Contribution">사회공헌</a>
+            <a href="esg.html#esg" data-en="ESG Management">ESG 경영</a>
+            <a href="esg.html#safety" data-en="Safety &amp; Quality">안전 · 품질</a>
+            <a href="esg.html#csr" data-en="Social Contribution">사회공헌</a>
           </div>
         </li>
         <li>
-          <a href="pr.html" target="_blank" rel="noopener" data-en="PR Center">홍보센터</a>
+          <a href="pr.html" data-en="PR">홍보센터</a>
           <div class="submenu">
-            <a href="pr.html#notice" target="_blank" rel="noopener" data-en="Notice">공지사항</a>
-            <a href="pr.html#press" target="_blank" rel="noopener" data-en="Press Release">보도자료</a>
-            <a href="pr.html#gallery" target="_blank" rel="noopener" data-en="Gallery">갤러리</a>
+            <a href="pr.html#notice" data-en="Notice">공지사항</a>
+            <a href="pr.html#press" data-en="Press Release">보도자료</a>
+            <a href="pr.html#gallery" data-en="Gallery">갤러리</a>
           </div>
         </li>
         <li>
-          <a href="careers.html" target="_blank" rel="noopener" data-en="Careers">인재채용</a>
+          <a href="careers.html" data-en="Careers">인재채용</a>
           <div class="submenu">
-            <a href="careers.html#talent" target="_blank" rel="noopener" data-en="Our Talent">인재상</a>
-            <a href="careers.html#welfare" target="_blank" rel="noopener" data-en="Benefits">복리후생</a>
-            <a href="careers.html#jobs" target="_blank" rel="noopener" data-en="Job Openings">채용공고</a>
+            <a href="careers.html#talent" data-en="Our Talent">인재상</a>
+            <a href="careers.html#welfare" data-en="Benefits">복리후생</a>
+            <a href="careers.html#jobs" data-en="Job Openings">채용공고</a>
           </div>
         </li>
       </ul>
@@ -726,24 +726,24 @@
       </div>
       <div class="foot-col">
         <h5 data-en="Company">회사소개</h5>
-        <a href="company.html#ceo" target="_blank" rel="noopener" data-en="CEO Message">CEO 인사말</a>
-        <a href="company.html#vision" target="_blank" rel="noopener" data-en="Philosophy &amp; Vision">경영이념 · 비전</a>
-        <a href="company.html#history" target="_blank" rel="noopener" data-en="History">연혁</a>
-        <a href="company.html#location" target="_blank" rel="noopener" data-en="Location">오시는 길</a>
+        <a href="company.html#ceo" data-en="CEO Message">CEO 인사말</a>
+        <a href="company.html#vision" data-en="Philosophy &amp; Vision">경영이념 · 비전</a>
+        <a href="company.html#history" data-en="History">연혁</a>
+        <a href="company.html#location" data-en="Location">오시는 길</a>
       </div>
       <div class="foot-col">
         <h5 data-en="Business · Services">사업 · 서비스</h5>
-        <a href="business.html#sea-air" target="_blank" rel="noopener" data-en="International Transport">국제운송</a>
-        <a href="business.html#special" target="_blank" rel="noopener" data-en="Special Cargo / NVOCC">특수화물 / NVOCC</a>
-        <a href="center.html#overview" target="_blank" rel="noopener" data-en="Busan New Port Logistics Center">부산신항 물류센터</a>
-        <a href="business.html#agency" target="_blank" rel="noopener" data-en="Shipping Agency">해운 에이전트</a>
+        <a href="business.html#sea-air" data-en="International Transport">국제운송</a>
+        <a href="business.html#special" data-en="Special Cargo / NVOCC">특수화물 / NVOCC</a>
+        <a href="center.html#overview" data-en="Busan New Port Logistics Center">부산신항 물류센터</a>
+        <a href="business.html#agency" data-en="Shipping Agency">해운 에이전트</a>
       </div>
       <div class="foot-col">
         <h5 data-en="Customer Support">고객지원</h5>
         <a href="eservice.html" data-en="⚓ E-Service Booking">⚓ E-Service 부킹</a>
         <a href="eservice.html#schedule" data-en="Sailing Schedule">선박 스케줄</a>
         <a href="eservice.html#process" data-en="Booking Process">부킹 절차 안내</a>
-        <a href="careers.html" target="_blank" rel="noopener" data-en="Careers">인재채용</a>
+        <a href="careers.html" data-en="Careers">인재채용</a>
       </div>
     </div>
     <div class="foot-bottom">
