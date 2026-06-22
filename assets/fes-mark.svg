@@ -1,14 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="FES Far East Shipping">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 116" width="104" height="116" role="img" aria-label="FES Far East Shipping">
   <defs>
-    <linearGradient id="fesGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#5fa0db"/>
-      <stop offset="0.45" stop-color="#2f6cb1"/>
-      <stop offset="1" stop-color="#14315d"/>
-    </linearGradient>
+    <clipPath id="fesShield">
+      <path d="M52 111 Q8 90 8 52 V16 Q8 8 16 8 H88 Q96 8 96 16 V52 Q96 90 52 111 Z"/>
+    </clipPath>
   </defs>
-  <rect x="8" y="8" width="104" height="104" rx="32" ry="32" fill="url(#fesGrad)"/>
-  <rect x="8" y="8" width="104" height="50" rx="32" ry="32" fill="#ffffff" opacity="0.09"/>
-  <text x="60" y="61" text-anchor="middle" dominant-baseline="central"
-        font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="40"
-        fill="#ffffff">FES</text>
+  <g clip-path="url(#fesShield)">
+    <!-- 좌측: 밝은 블루 / 우측: 진한 블루 (세로 2톤 분할) -->
+    <rect x="0" y="0" width="52" height="116" fill="#3180cb"/>
+    <rect x="52" y="0" width="52" height="116" fill="#16539c"/>
+    <!-- 상단 광택 -->
+    <rect x="0" y="0" width="104" height="46" fill="#ffffff" opacity="0.12"/>
+  </g>
+  <text x="52" y="49" text-anchor="middle" dominant-baseline="central"
+        font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif" font-weight="800"
+        font-size="31" letter-spacing="-1" fill="#ffffff">FES</text>
 </svg>
