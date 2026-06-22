@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 로그/임시
+*.log
+*.tmp
+__*.html
+
+# 내부 기획 문서 (공개 배포 제외 — 포함하려면 이 줄을 삭제하세요)
+해상부킹_플랫폼_설계기획서.md
+
+# 미사용 스크린샷
+assets/Screenshot*
