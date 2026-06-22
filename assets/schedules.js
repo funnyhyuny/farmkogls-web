@@ -8,8 +8,8 @@
 
    ── 한 항차(row) 작성법 ──────────────────────────────────────
    {
-     carrier: "ESL",                // 선사 코드 (아래 carriers 목록)
-     vessel:  "EMIRATES PIONEER",   // 선박명(모선)
+     carrier: "MSC",                // 선사 코드 (아래 carriers 목록)
+     vessel:  "MSC AURORA",         // 선박명(모선)
      voyage:  "0125E",              // 항차
      pol:     "KRPUS",              // 선적항 (아래 ports 목록, UN/LOCODE)
      pod:     "AEDXB",              // 양하항
@@ -46,7 +46,6 @@ window.FARMKO_SCHEDULES = {
 
   // 선사 마스터
   carriers: [
-    { code: "ESL",  name: "Emirates Shipping Line" },
     { code: "ESHP", name: "e-Shipping Line" },
     { code: "MSC",  name: "MSC" },
     { code: "ONE",  name: "Ocean Network Express" },
@@ -55,8 +54,6 @@ window.FARMKO_SCHEDULES = {
 
   // 스케줄 목록 (PLISM /svc/schedule 기준으로 갱신)
   list: [
-    { carrier: "ESL",  vessel: "EMIRATES PIONEER", voyage: "0125E", pol: "KRPUS", pod: "AEDXB", space: "OK",  cy: "PNC 부산신항", off: 5,  tr: 18 },
-    { carrier: "ESL",  vessel: "EMIRATES VICTORY", voyage: "0127E", pol: "KRPUS", pod: "AEDXB", space: "LOW", cy: "PNC 부산신항", off: 12, tr: 18 },
     { carrier: "MSC",  vessel: "MSC AURORA",       voyage: "114W",  pol: "KRPUS", pod: "NLRTM", space: "OK",  cy: "PNC 부산신항", off: 2,  tr: 32 },
     { carrier: "ONE",  vessel: "ONE COLUMBA",      voyage: "088E",  pol: "KRPUS", pod: "USLAX", space: "OK",  cy: "PNC 부산신항", off: 7,  tr: 14 },
     { carrier: "HMM",  vessel: "HMM JEJU",         voyage: "2206S", pol: "KRPUS", pod: "CNSHA", space: "OK",  cy: "PNC 부산신항", off: 3,  tr: 3  },
