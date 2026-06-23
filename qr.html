@@ -24,6 +24,7 @@
   .qrbox{display:inline-block;padding:18px;border:1px solid var(--line);border-radius:20px;background:#fff}
   .qrbox img{width:300px;height:300px;display:block}
   .scan{margin-top:22px;font-size:15.5px;color:var(--navy);font-weight:700}
+  .ic-svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.18em}
   .scan span{color:var(--blue)}
   .url{margin-top:8px;display:inline-block;font-size:15px;font-weight:800;color:#fff;
     background:linear-gradient(135deg,var(--navy),var(--blue));padding:9px 20px;border-radius:999px;letter-spacing:.02em}
@@ -54,7 +55,7 @@
       <img src="assets/qr-farmko.svg" alt="farmko.co.kr QR 코드" />
     </div>
 
-    <div class="scan">📷 <span>스캔</span>하면 홈페이지로 이동합니다</div>
+    <div class="scan"><svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z'/><circle cx='12' cy='13' r='3'/></svg> <span>스캔</span>하면 홈페이지로 이동합니다</div>
     <div class="url">farmko.co.kr</div>
 
     <div class="actions">

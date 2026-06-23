@@ -89,7 +89,8 @@ img{max-width:100%;display:block}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:34px}
 .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;transition:.25s}
 .card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
-.card .ic{font-size:34px;margin-bottom:14px}
+.card .ic{font-size:34px;margin-bottom:14px;color:var(--navy)}
+.ic-svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.18em}
 .card h3{font-size:19px;color:var(--navy);font-weight:700;margin-bottom:10px}
 .card p{color:var(--gray);font-size:15px}
 .card ul{margin:12px 0 0;padding-left:18px}
