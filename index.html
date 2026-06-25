@@ -33,6 +33,7 @@
     color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;
   }
   a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible,.btn:focus-visible,.gnb a:focus-visible,.hamburger:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:6px}
   img{max-width:100%;display:block}
   .container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
   .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:999px;font-weight:600;font-size:15px;transition:.25s;cursor:pointer;border:none}
@@ -111,7 +112,7 @@
   .quick-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:30px 28px;display:flex;align-items:center;gap:18px;transition:.25s;border:1px solid var(--line)}
   .quick-card:hover{transform:translateY(-6px);box-shadow:0 18px 45px rgba(10,37,64,.16)}
   .quick-card .ic{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--sky));display:grid;place-items:center;color:#fff;font-size:26px;flex-shrink:0}
-  .quick-card h3{font-size:19px;color:var(--navy);font-weight:700}
+  .quick-card h3{font-size:20px;color:var(--navy);font-weight:700}
   .quick-card p{font-size:14px;color:var(--gray)}
   /* ===== 선박 스케줄·부킹 강조 배너 ===== */
   .book-cta{display:flex;align-items:center;gap:26px;background:linear-gradient(115deg,var(--navy) 0%,var(--navy-2) 45%,var(--blue) 100%);border-radius:20px;box-shadow:0 22px 55px rgba(10,37,64,.28);padding:34px 40px;color:#fff;position:relative;overflow:hidden;transition:.28s}
@@ -174,7 +175,7 @@
   .feature-list small{color:#aecbe6;font-size:13.5px}
 
   /* ===== NETWORK STRIP ===== */
-  .net{background:var(--white)}
+  .net{background:var(--bg)}
   .net-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:48px}
   .net-card{text-align:left;border-radius:14px;border:1px solid var(--line);overflow:hidden;background:#fff;transition:.25s}
   .net-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
@@ -208,9 +209,9 @@
   .news-card:hover .news-thumb img{transform:scale(1.06)}
   .news-body{padding:24px}
   .news-body .cat{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.06em}
-  .news-body h4{font-size:18px;color:var(--navy);margin:8px 0;font-weight:700;line-height:1.4}
+  .news-body h4{font-size:20px;color:var(--navy);margin:8px 0;font-weight:700;line-height:1.4}
   .news-body p{font-size:14px;color:var(--gray)}
-  .news-body .date{font-size:13px;color:#9aa8b6;margin-top:14px}
+  .news-body .date{font-size:13px;color:var(--gray);margin-top:14px}
 
   /* ===== CTA BANNER ===== */
   .cta{background:linear-gradient(120deg,var(--blue),var(--sky));color:#fff;text-align:center}
@@ -275,6 +276,7 @@
     .topbar{display:none}
     .hamburger{display:flex}
     .nav-cta .btn{display:none}
+    .nav-cta .nav-call{display:inline-flex;padding:8px 12px;font-size:12.5px}
     .gnb{position:fixed;top:78px;left:0;right:0;background:#fff;flex-direction:column;height:auto;max-height:0;overflow:hidden;transition:.35s;box-shadow:var(--shadow);border-top:1px solid var(--line)}
     .gnb.open{max-height:90vh;padding:10px 0}
     .gnb>li{flex-direction:column;align-items:stretch}
@@ -314,7 +316,7 @@
     <span class="sep"></span>
     <a href="#" data-lang-btn="en">ENGLISH</a>
     <span class="sep"></span>
-    <a href="eservice.html" class="eserv-top" data-en="<img class='fes-ic' src='assets/fes-mark.svg' alt='FES'> E-Service Booking"><img class='fes-ic' src='assets/fes-mark.svg' alt='FES'> E-Service 부킹</a>
+    <a href="eservice.html" data-en="<img class='fes-ic' src='assets/fes-mark.svg' alt='FES'> E-Service Booking"><img class='fes-ic' src='assets/fes-mark.svg' alt='FES'> E-Service 부킹</a>
     <a href="eservice.html#schedule" data-en="<svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2'/><path d='M19.4 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.9 5.3 2.8 7.8'/><path d='M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6'/><path d='M12 10v4M12 2v3'/></svg> Sailing Schedule"><svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2'/><path d='M19.4 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.9 5.3 2.8 7.8'/><path d='M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6'/><path d='M12 10v4M12 2v3'/></svg> 선박 스케줄</a>
   </div>
 </div>
@@ -392,6 +394,7 @@
     </nav>
 
     <div class="nav-cta">
+      <a href="tel:0227514900" class="btn btn-primary nav-call" data-en="<svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z'/></svg> Call Us"><svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z'/></svg> 전화 상담</a>
       <button class="hamburger" id="hamburger" aria-label="메뉴">
         <span></span><span></span><span></span>
       </button>
@@ -404,11 +407,11 @@
   <svg class="waves" viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="#ffffff" fill-opacity="0.10" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L0,120Z"></path></svg>
   <div class="container hero-inner">
     <span class="tag">Global Logistic Service Partner · Since 2003</span>
-    <h1 data-en="Logistics that connect the world,<br>together with <span>FARMKO GLS</span>">세계를 잇는 물류,<br><span>팜코지엘에스</span>가 함께합니다</h1>
-    <p data-en="From international transport to special cargo and the Busan New Port Logistics Center, we deliver total logistics solutions that strengthen the competitiveness of export and import companies.">국제운송부터 특수화물, 부산신항 물류센터까지,
-       수출입 기업의 경쟁력을 높이는 종합 물류 솔루션을 제공합니다.</p>
+    <h1 data-en="From Busan New Port to global transport,<br>one-stop logistics by <span>FARMKO GLS</span>">부산신항부터 국제운송까지,<br>원스톱 물류는 <span>팜코지엘에스</span></h1>
+    <p data-en="From ocean and air transport to special cargo, NVOCC and the Busan New Port Logistics Center, FARMKO GLS handles every step of your import and export logistics.">해상·항공 국제운송부터 특수화물, NVOCC, 부산신항 물류센터까지,
+       수출입 물류의 모든 단계를 팜코지엘에스가 책임집니다.</p>
     <div class="hero-actions">
-      <a href="eservice.html" class="btn btn-primary" data-en="Sailing Schedule &amp; Booking →">선박 스케줄 · 부킹 →</a>
+      <a href="eservice.html" class="btn btn-eserv" data-en="Sailing Schedule &amp; Booking →">선박 스케줄 · 부킹 →</a>
       <a href="#business" class="btn btn-ghost" data-en="View Business">사업분야 보기</a>
     </div>
   </div>
@@ -435,9 +438,9 @@
     <div>
       <div class="eyebrow">About FARMKO GLS</div>
       <h2 class="sec-title" data-en="A Total Logistics Company<br>built on 22 years of trust">22년의 신뢰로 쌓은<br>종합물류 전문기업</h2>
-      <p class="sec-desc" data-en="Since its founding in 2003, FARMKO GLS CO., LTD. has grown into a total logistics company spanning special cargo, NVOCC, and warehousing and logistics centers on the foundation of international freight forwarding, maintaining a global network and the logistics infrastructure of the Busan New Port.">㈜팜코지엘에스는 2003년 설립 이래 국제물류주선(포워딩)을 기반으로
-        특수화물, NVOCC, 보관·물류센터 사업을 아우르는 종합물류기업으로 성장해 왔습니다.
-        글로벌 네트워크와 부산신항 물류 인프라를 갖추고 있습니다.</p>
+      <p class="sec-desc" data-en="Since 2003, FARMKO GLS has connected every stage of import and export logistics — from international freight forwarding to special cargo, NVOCC and warehousing. With the Busan New Port Logistics Center and a global partner network, we give shippers a single point of contact for their logistics.">㈜팜코지엘에스는 2003년 설립 이래 국제물류주선(포워딩)을 중심으로
+        특수화물·NVOCC·보관까지 수출입 물류의 전 과정을 연결합니다.
+        부산신항 물류센터와 글로벌 파트너 네트워크로, 화주에게 하나의 창구로 끝나는 물류를 제공합니다.</p>
       <div class="stats">
         <div class="stat"><b>2003</b><span data-en="Year Founded (22 years in business)">설립 연도 (업력 22년)</span></div>
         <div class="stat"><b data-en="KRW 37.4B+">374억+</b><span data-en="Annual Revenue (2025)">연 매출 (2025년)</span></div>
@@ -642,7 +645,7 @@
 <section class="section cta" id="quote">
   <div class="container">
     <h2 data-en="Leave Your Logistics to FARMKO GLS">물류, 팜코지엘에스에 맡기세요</h2>
-    <p data-en="From sea, air, and inland transport to warehousing and customs clearance, get professional consulting.">해상·항공·내륙 운송부터 보관·통관까지, 전문 상담을 받아보세요.</p>
+    <p data-en="From ocean, air and inland transport to warehousing and customs, our specialists reply fast with a quote tailored to your cargo and route.">화물과 항로에 맞는 운송과 견적을, 전문 담당자가 신속히 안내합니다.</p>
     <a href="tel:0227514900" class="btn btn-primary" data-en="<svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z'/></svg> 02-751-4900 Call Us"><svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z'/></svg> 02-751-4900 전화 상담</a>
   </div>
 </section>
@@ -652,7 +655,7 @@
   <div class="container center">
     <div class="eyebrow">Contact Us</div>
     <h2 class="sec-title" data-en="Contact">연락처 · 상담</h2>
-    <p class="sec-desc" data-en="Reach us by phone or email — our team will respond promptly.">전화 또는 이메일로 편하게 문의해 주세요. 담당자가 신속히 안내해 드립니다.</p>
+    <p class="sec-desc" data-en="Have a shipment coming up? Call or email us, and our team replies quickly with a quote and schedule suited to your cargo.">수출입 일정이 있으신가요? 전화·이메일로 문의하시면, 화물에 맞는 견적과 일정을 신속히 안내합니다.</p>
   </div>
   <div class="container">
     <div class="contact-grid">
@@ -689,7 +692,7 @@
           <a href="tel:0227514900" class="btn btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:15px" data-en="<svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z'/></svg> Call 02-751-4900"><svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z'/></svg> 전화 상담 02-751-4900</a>
           <a href="mailto:farm@farmkogls.com" class="btn" style="width:100%;justify-content:center;font-size:16px;padding:15px;background:#fff;color:var(--blue);border:1px solid var(--line)" data-en="<svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><rect width='20' height='16' x='2' y='4' rx='2'/><path d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'/></svg> Email farm@farmkogls.com"><svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><rect width='20' height='16' x='2' y='4' rx='2'/><path d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'/></svg> 이메일 farm@farmkogls.com</a>
         </div>
-        <p style="color:#9aa8b6;font-size:13px;margin-top:18px" data-en="Business hours: Mon–Fri 09:00–18:00 (Closed weekends &amp; holidays)">상담 시간 · 월~금 09:00 ~ 18:00 (주말 · 공휴일 휴무)</p>
+        <p style="color:var(--gray);font-size:13px;margin-top:18px" data-en="Business hours: Mon–Fri 09:00–18:00 (Closed weekends &amp; holidays)">상담 시간 · 월~금 09:00 ~ 18:00 (주말 · 공휴일 휴무)</p>
       </div>
 
     </div>
