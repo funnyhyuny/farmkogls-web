@@ -267,7 +267,9 @@
     .net-grid{grid-template-columns:repeat(2,1fr)}
   }
   @media(max-width:768px){
-    .hero h1{font-size:38px}
+    .hero h1{font-size:36px;line-height:1.24}
+    .hero p{font-size:17px;line-height:1.7}
+    .hero-inner{padding:54px 10px}
     .sec-title{font-size:29px}
     .section{padding:64px 0}
     .quick-grid,.biz-grid,.news-grid,.stats,.form-row,.gal-grid{grid-template-columns:1fr}
@@ -277,8 +279,8 @@
     .hamburger{display:flex}
     .nav-cta .btn{display:none}
     .nav-cta .nav-call{display:inline-flex;padding:8px 12px;font-size:12.5px}
-    .gnb{position:fixed;top:78px;left:0;right:0;background:#fff;flex-direction:column;height:auto;max-height:0;overflow:hidden;transition:.35s;box-shadow:var(--shadow);border-top:1px solid var(--line)}
-    .gnb.open{max-height:90vh;padding:10px 0}
+    .gnb{position:fixed;top:78px;left:0;right:0;background:#fff;flex-direction:column;height:auto;max-height:0;overflow:hidden;transition:max-height .35s;box-shadow:var(--shadow);border-top:1px solid var(--line)}
+    .gnb.open{max-height:calc(100vh - 78px);overflow-y:auto;-webkit-overflow-scrolling:touch;padding:10px 0 24px;overscroll-behavior:contain}
     .gnb>li{flex-direction:column;align-items:stretch}
     .gnb>li>a{padding:16px 24px;height:auto;font-size:17px}
     .gnb>li::after{display:none}
@@ -288,11 +290,11 @@
   }
   @media(max-width:520px){.foot-grid{grid-template-columns:1fr}}
   @media(max-width:480px){
-    .container{padding:0 18px}
+    .container{padding:0 20px}
     .hero{min-height:470px}
-    .hero h1{font-size:27px;line-height:1.28}
-    .hero p{font-size:15px}
-    .hero-inner{padding:34px 0}
+    .hero h1{font-size:25px;line-height:1.36;letter-spacing:-.01em}
+    .hero p{font-size:15px;line-height:1.72}
+    .hero-inner{padding:30px 8px}
     .hero .tag{font-size:12.5px;padding:7px 14px}
     .hero-actions .btn{padding:12px 18px;font-size:14.5px}
     .quickbar{margin-top:-40px}
@@ -316,8 +318,7 @@
     <span class="sep"></span>
     <a href="#" data-lang-btn="en">ENGLISH</a>
     <span class="sep"></span>
-    <a href="eservice.html" data-en="<img class='fes-ic' src='assets/fes-mark.svg' alt='FES'> E-Service Booking"><img class='fes-ic' src='assets/fes-mark.svg' alt='FES'> E-Service 부킹</a>
-    <a href="eservice.html#schedule" data-en="<svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2'/><path d='M19.4 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.9 5.3 2.8 7.8'/><path d='M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6'/><path d='M12 10v4M12 2v3'/></svg> Sailing Schedule"><svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2'/><path d='M19.4 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.9 5.3 2.8 7.8'/><path d='M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6'/><path d='M12 10v4M12 2v3'/></svg> 선박 스케줄</a>
+    <a href="https://farmkogls.plism.com/" target="_blank" rel="noopener" data-en="<img class='fes-ic' src='assets/fes-mark.svg' alt='FES'> PLISM Booking"><img class='fes-ic' src='assets/fes-mark.svg' alt='FES'> PLISM 부킹</a>
   </div>
 </div>
 
@@ -361,9 +362,9 @@
         <li class="eserv">
           <a href="eservice.html" data-en="<img class='fes-ic' src='assets/fes-mark.svg' alt='FES'> E-Service"><img class='fes-ic' src='assets/fes-mark.svg' alt='FES'> E-Service</a>
           <div class="submenu">
-            <a href="eservice.html#schedule" data-en="Sailing Schedule">선박 스케줄</a>
             <a href="https://farmkogls.plism.com/" target="_blank" rel="noopener" data-en="PLISM Booking">PLISM 부킹 바로가기</a>
             <a href="eservice.html#process" data-en="Booking Process">부킹 절차 안내</a>
+            <a href="eservice.html" data-en="E-Service Guide">E-Service 안내</a>
           </div>
         </li>
         <li>
@@ -394,7 +395,7 @@
     </nav>
 
     <div class="nav-cta">
-      <a href="tel:0227514900" class="btn btn-primary nav-call" data-en="<svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z'/></svg> Call Us"><svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z'/></svg> 전화 상담</a>
+      <a href="tel:027514900" class="btn btn-primary nav-call" data-en="<svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z'/></svg> Call Us"><svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z'/></svg> 전화 상담</a>
       <button class="hamburger" id="hamburger" aria-label="메뉴">
         <span></span><span></span><span></span>
       </button>
@@ -411,7 +412,7 @@
     <p data-en="From ocean and air transport to special cargo, NVOCC and the Busan New Port Logistics Center, FARMKO GLS handles every step of your import and export logistics.">해상·항공 국제운송부터 특수화물, NVOCC, 부산신항 물류센터까지,
        수출입 물류의 모든 단계를 팜코지엘에스가 책임집니다.</p>
     <div class="hero-actions">
-      <a href="eservice.html" class="btn btn-eserv" data-en="Sailing Schedule &amp; Booking →">선박 스케줄 · 부킹 →</a>
+      <a href="eservice.html" class="btn btn-eserv" data-en="Online Booking (PLISM) →">온라인 부킹 (PLISM) →</a>
       <a href="#business" class="btn btn-ghost" data-en="View Business">사업분야 보기</a>
     </div>
   </div>
@@ -424,8 +425,8 @@
       <div class="book-ic"><img src="assets/fes-mark.svg" alt="FES" /></div>
       <div class="book-txt">
         <span class="be" data-en="E-SERVICE · ONLINE BOOKING">E-SERVICE · 온라인 부킹</span>
-        <h3 data-en="Sailing Schedule &amp; Online Booking">선박 스케줄 조회 &amp; 온라인 부킹</h3>
-        <p data-en="Check key sailing schedules at a glance, then book directly on KLNET PLISM.">주요 항로 선박 스케줄을 한눈에 확인하고, KLNET PLISM에서 바로 부킹하세요.</p>
+        <h3 data-en="Online Booking on KLNET PLISM">KLNET PLISM 온라인 부킹</h3>
+        <p data-en="Submit your shipping request (S/R) directly on FARMKO GLS's KLNET PLISM booking site.">해상 선적예약(부킹)은 팜코지엘에스 KLNET PLISM 부킹 사이트에서 바로 진행하세요.</p>
       </div>
       <span class="book-go" data-en="Go to E-Service →">바로가기 →</span>
     </a>
@@ -443,7 +444,6 @@
         부산신항 물류센터와 글로벌 파트너 네트워크로, 화주에게 하나의 창구로 끝나는 물류를 제공합니다.</p>
       <div class="stats">
         <div class="stat"><b>2003</b><span data-en="Year Founded (22 years in business)">설립 연도 (업력 22년)</span></div>
-        <div class="stat"><b data-en="KRW 37.4B+">374억+</b><span data-en="Annual Revenue (2025)">연 매출 (2025년)</span></div>
         <div class="stat"><b>23,000㎡</b><span data-en="Busan New Port Logistics Center">부산신항 물류센터</span></div>
         <div class="stat"><b data-en="3+ Countries">3개국+</b><span data-en="Key Service Networks">주요 서비스 네트워크</span></div>
       </div>
@@ -646,7 +646,7 @@
   <div class="container">
     <h2 data-en="Leave Your Logistics to FARMKO GLS">물류, 팜코지엘에스에 맡기세요</h2>
     <p data-en="From ocean, air and inland transport to warehousing and customs, our specialists reply fast with a quote tailored to your cargo and route.">화물과 항로에 맞는 운송과 견적을, 전문 담당자가 신속히 안내합니다.</p>
-    <a href="tel:0227514900" class="btn btn-primary" data-en="<svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z'/></svg> 02-751-4900 Call Us"><svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z'/></svg> 02-751-4900 전화 상담</a>
+    <a href="tel:027514900" class="btn btn-primary" data-en="<svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z'/></svg> 02-751-4900 Call Us"><svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z'/></svg> 02-751-4900 전화 상담</a>
   </div>
 </section>
 
@@ -671,7 +671,7 @@
           </li>
           <li>
             <span class="ci"><svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z'/></svg></span>
-            <div><small>Tel · Fax</small><b><a href="tel:0227514900">02-751-4900</a> · FAX 02-752-4664</b></div>
+            <div><small>Tel · Fax</small><b><a href="tel:027514900">02-751-4900</a> · FAX 02-752-4664</b></div>
           </li>
           <li>
             <span class="ci"><svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><rect width='20' height='16' x='2' y='4' rx='2'/><path d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'/></svg></span>
@@ -689,7 +689,7 @@
         <h3 style="font-size:22px;color:var(--navy);font-weight:800;margin-bottom:10px" data-en="Contact us directly">바로 연락 주세요</h3>
         <p style="color:var(--gray);font-size:15px;line-height:1.7;margin-bottom:26px" data-en="Reach our team by phone or email and we'll get back to you promptly. We don't collect your information through an online form.">전화 또는 이메일로 문의해 주시면 담당자가 신속히 안내해 드립니다. 온라인 폼으로 개인정보를 수집하지 않습니다.</p>
         <div style="display:flex;flex-direction:column;gap:14px">
-          <a href="tel:0227514900" class="btn btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:15px" data-en="<svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z'/></svg> Call 02-751-4900"><svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z'/></svg> 전화 상담 02-751-4900</a>
+          <a href="tel:027514900" class="btn btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:15px" data-en="<svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z'/></svg> Call 02-751-4900"><svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><path d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z'/></svg> 전화 상담 02-751-4900</a>
           <a href="mailto:farm@farmkogls.com" class="btn" style="width:100%;justify-content:center;font-size:16px;padding:15px;background:#fff;color:var(--blue);border:1px solid var(--line)" data-en="<svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><rect width='20' height='16' x='2' y='4' rx='2'/><path d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'/></svg> Email farm@farmkogls.com"><svg class='ic-svg' viewBox='0 0 24 24' aria-hidden='true'><rect width='20' height='16' x='2' y='4' rx='2'/><path d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'/></svg> 이메일 farm@farmkogls.com</a>
         </div>
         <p style="color:var(--gray);font-size:13px;margin-top:18px" data-en="Business hours: Mon–Fri 09:00–18:00 (Closed weekends &amp; holidays)">상담 시간 · 월~금 09:00 ~ 18:00 (주말 · 공휴일 휴무)</p>
@@ -727,7 +727,7 @@
       <div class="foot-col">
         <h5 data-en="Customer Support">고객지원</h5>
         <a href="eservice.html" data-en="<img class='fes-ic' src='assets/fes-mark.svg' alt='FES'> E-Service Booking"><img class='fes-ic' src='assets/fes-mark.svg' alt='FES'> E-Service 부킹</a>
-        <a href="eservice.html#schedule" data-en="Sailing Schedule">선박 스케줄</a>
+        <a href="https://farmkogls.plism.com/" target="_blank" rel="noopener" data-en="PLISM Booking">PLISM 부킹 바로가기</a>
         <a href="eservice.html#process" data-en="Booking Process">부킹 절차 안내</a>
         <a href="careers.html" data-en="Careers">인재채용</a>
       </div>
