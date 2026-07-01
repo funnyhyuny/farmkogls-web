@@ -308,6 +308,100 @@
     .quicksearch{padding:20px 18px}
     .step h4{font-size:15.5px}
   }
+
+  /* ===== 항차 그룹 카드 (스케줄 재설계 · 대안 C) ===== */
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .voy-qrow{grid-template-columns:auto 1.1fr 1fr auto 1.2fr auto}
+  .voy-pol{display:inline-flex;align-items:center;gap:8px;padding:12px 15px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:14px;font-weight:700;color:var(--navy);white-space:nowrap;height:46px}
+  .voy-pol svg{width:15px;height:15px;stroke:var(--blue);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+  .voy-toggle{display:block}
+  .voy-toggle input{position:absolute;opacity:0;pointer-events:none}
+  .voy-toggle span{display:flex;align-items:center;justify-content:center;gap:7px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:13.5px;font-weight:700;color:var(--gray);background:var(--bg);cursor:pointer;white-space:nowrap;height:46px;transition:.16s}
+  .voy-toggle span::before{content:"";width:15px;height:15px;border-radius:5px;border:1.5px solid var(--line);background:#fff;flex-shrink:0}
+  .voy-toggle input:checked+span{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .voy-toggle input:checked+span::before{background:#fff;border-color:#fff}
+  .voy-toggle input:focus-visible+span{outline:2px solid var(--blue);outline-offset:2px}
+
+  .sched-results.voy-wrap{border:none;background:none;box-shadow:none;overflow:visible}
+  .voy-wrap .sched-head{background:none;border:none;padding:0 4px 14px}
+  .voy-wrap .sched-head b .cnt{color:var(--blue)}
+  .voy-list{display:flex;flex-direction:column}
+  .voy-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:16px;transition:box-shadow .2s,border-color .2s}
+  .voy-card:hover{border-color:transparent;box-shadow:0 14px 40px rgba(10,37,64,.13)}
+  .voy-card.is-closed{background:#fbfcfd;border-color:#eef1f4;box-shadow:0 6px 22px rgba(10,37,64,.06)}
+  .voy-head{display:flex;align-items:center;gap:22px;padding:20px 24px;cursor:pointer;background:#fff}
+  .voy-card.is-closed .voy-head{background:var(--bg)}
+  .voy-head:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
+  .voy-main{flex:1 1 auto;min-width:0}
+  .voy-vessel{display:block;font-size:18px;font-weight:800;color:var(--navy);letter-spacing:-.01em;line-height:1.25}
+  .voy-card.is-closed .voy-vessel{color:#48586a}
+  .voy-sub{display:block;font-size:12.5px;font-weight:600;color:var(--gray);margin-top:3px}
+  .voy-etd{flex:0 0 auto}
+  .voy-lab{display:block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gray)}
+  .voy-etd b{display:block;font-size:16px;font-weight:800;color:var(--blue);margin-top:2px;font-variant-numeric:tabular-nums}
+  .voy-card.is-closed .voy-etd b{color:var(--gray)}
+  .voy-etd b .muted{font-weight:600;font-size:13px}
+  .voy-meta{flex:0 0 auto;display:flex;flex-direction:column;gap:5px;min-width:150px}
+  .voy-podcount{font-size:13.5px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:6px}
+  .voy-podcount svg{width:13px;height:13px;stroke:var(--gray);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+  .voy-regions{display:flex;gap:5px;flex-wrap:wrap}
+  .voy-region{display:inline-flex;align-items:center;font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--bg);color:var(--navy);border:1px solid var(--line)}
+  .voy-tt{font-size:12.5px;color:var(--gray)}
+  .voy-status{flex:0 0 auto}
+  .voy-toggle-ic{flex:0 0 auto;background:none;border:none;padding:6px;cursor:pointer;color:var(--gray);display:grid;place-items:center;border-radius:8px}
+  .voy-toggle-ic svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+  .voy-card.is-open .voy-toggle-ic svg{transform:rotate(180deg)}
+  .voy-toggle-ic:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  .voy-body{border-top:1px solid var(--line);background:#fff;display:none}
+  .voy-card.is-open .voy-body{display:block}
+  .voy-card.is-closed .voy-body{background:var(--bg)}
+  .voy-body-head,.voy-pod{display:grid;grid-template-columns:1.4fr 1fr .8fr 1.6fr auto;gap:16px;align-items:center;padding:13px 24px}
+  .voy-body-head{font-size:11px;text-transform:uppercase;letter-spacing:.03em;color:var(--gray);font-weight:700;background:var(--bg);border-bottom:1px solid var(--line)}
+  .voy-card.is-closed .voy-body-head{background:#f1f4f7}
+  .voy-pod{border-bottom:1px solid var(--line)}
+  .voy-pod:last-child{border-bottom:none}
+  .voy-pod-name b{font-size:14.5px;font-weight:700;color:var(--navy)}
+  .voy-card.is-closed .voy-pod-name b{color:#48586a}
+  .voy-pod-name small{display:block;font-size:11.5px;color:var(--gray);font-weight:600;margin-top:2px}
+  .voy-pod-eta{font-size:14px;color:var(--ink);font-variant-numeric:tabular-nums}
+  .voy-pod-tt{font-size:13.5px;font-weight:700;color:var(--ink)}
+  .voy-pod-tt.best{color:#0a8f5b}
+  .voy-pod-tt .best-tag{display:block;font-size:10.5px;font-weight:700;color:#0a8f5b}
+  .voy-pod-close{font-size:12px;line-height:1.7;color:var(--gray)}
+  .voy-pod-close b{color:var(--ink);font-weight:700}
+  .voy-pod-book{text-align:right}
+  .btn-mini.is-disabled{background:#eef1f4;color:#9aa8b6;cursor:not-allowed;pointer-events:none;box-shadow:none}
+  .voy-bkgclose{display:block;color:var(--gray);font-size:11px;margin-top:6px}
+  .voy-state{padding:54px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+  .voy-state svg{width:42px;height:42px;stroke:var(--gray);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .voy-state h4{font-size:16px;font-weight:800;color:var(--navy);margin:0}
+  .voy-state p{font-size:14px;color:var(--gray);margin:0}
+  .voy-state .row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+  @media(max-width:1024px){
+    .voy-qrow{grid-template-columns:1fr 1fr}
+    .voy-qrow .voy-pol,.voy-qrow>.qf:last-child{grid-column:span 2}
+    .voy-meta{min-width:0}
+    .voy-head{flex-wrap:wrap;gap:14px 18px}
+  }
+  @media(max-width:768px){
+    .voy-qrow{grid-template-columns:1fr}
+    .voy-qrow .voy-pol,.voy-qrow>.qf:last-child{grid-column:auto}
+    .voy-head{padding:16px 18px;gap:6px 14px}
+    .voy-main{flex:1 1 100%;order:1}
+    .voy-status{order:2;margin-left:auto}
+    .voy-toggle-ic{order:3}
+    .voy-etd{order:4}
+    .voy-meta{order:5;flex:1 1 auto}
+    .voy-etd b{font-size:14px}
+    .voy-body-head{display:none}
+    .voy-pod{grid-template-columns:1fr;gap:5px;padding:14px 18px}
+    .voy-pod>div{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+    .voy-pod-eta::before,.voy-pod-tt::before,.voy-pod-close::before{content:attr(data-l);color:var(--gray);font-weight:700;font-size:11.5px}
+    .voy-pod-close::before{align-self:flex-start}
+    .voy-pod-book{text-align:center;margin-top:4px}
+    .voy-pod-book .btn-mini{display:block;padding:12px;text-align:center}
+    .voy-pod-book .btn-mini.ghost{display:inline-block}
+  }
 </style>
 </head>
 <body data-en-title="E-Service · Ocean Booking Platform | FARMKO GLS">
@@ -362,6 +456,42 @@
     <a href="https://farmkogls.plism.com/" target="_blank" rel="noopener" class="btn btn-accent btn-lg" style="white-space:nowrap" data-en="Start Booking on PLISM →">PLISM 부킹 시작하기 →</a>
   </div>
 </div>
+
+<!-- ===== 실시간 선박 스케줄 (PLISM 연동 · 항차 그룹 카드) ===== -->
+<section class="section" id="schedule">
+  <div class="container">
+    <div class="eyebrow" data-en="Live Sailing Schedule · via KLNET PLISM">실시간 선박 스케줄 · KLNET PLISM</div>
+    <h2 class="sec-title" data-en="FARMKO GLS sailing schedule">팜코지엘에스 선박 스케줄</h2>
+    <p class="lede" data-en="Upcoming sailings from Busan, pulled live from FARMKO GLS's KLNET PLISM schedule. Grouped by voyage for easy scanning. Booking is completed on PLISM.">부산발 다가오는 항차를 KLNET PLISM 스케줄에서 실시간으로 가져왔습니다. 항차 단위로 묶어 한눈에 볼 수 있습니다. 최종 부킹은 PLISM에서 진행합니다.</p>
+
+    <!-- 컨트롤 바 -->
+    <div class="quicksearch" style="margin-top:26px">
+      <div class="qrow voy-qrow">
+        <div class="voy-pol">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2"/><path d="M19.4 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.9 5.3 2.8 7.8"/><path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"/><path d="M12 10v4M12 2v3"/></svg>
+          <span data-en="Departs Busan (KRPUS)">부산(KRPUS) 출발</span>
+        </div>
+        <div class="qf"><label data-en="Destination (POD)">도착항 (POD)</label><select id="fPod"></select></div>
+        <div class="qf"><label data-en="Sort">정렬</label><select id="fSort"><option value="etd" data-en="Earliest departure">빠른 출항순</option><option value="tt" data-en="Shortest T/T">짧은 T/T순</option></select></div>
+        <div class="qf"><label>&nbsp;</label><label class="voy-toggle"><input type="checkbox" id="fBookable" /><span data-en="Bookable only">부킹 가능만</span></label></div>
+        <div class="qf"><label data-en="Vessel / Voyage">선박 / 항차</label><input id="fq" type="text" placeholder="선박명·항차 검색" data-en-ph="Search vessel / voyage" /></div>
+        <div class="qf"><label style="visibility:hidden">.</label><button class="btn btn-accent" id="fReset" type="button" data-en="Reset">초기화</button></div>
+      </div>
+    </div>
+
+    <!-- 결과: 항차 그룹 카드 -->
+    <div class="sched-results voy-wrap">
+      <div class="sched-head" role="status">
+        <b id="schCount" data-en="Loading schedule…">스케줄 불러오는 중…</b>
+        <span class="hint" id="schMeta"></span>
+      </div>
+      <div class="voy-list" id="voyList">
+        <div class="empty" data-en="Loading…">불러오는 중…</div>
+      </div>
+    </div>
+    <p style="margin-top:14px;color:var(--gray);font-size:12.5px" data-en="Source: FARMKO GLS KLNET PLISM (farmkogls.plism.com/svc/schedule). Grouped by voyage, already-departed excluded, earliest first. Booking status reflects the carrier's booking_yn. Final booking and doc/cargo closing are confirmed on PLISM.">출처: FARMKO GLS KLNET PLISM(farmkogls.plism.com/svc/schedule). 항차 단위로 묶음 · 이미 출항한 항차 제외 · 빠른 출항순. 부킹 가능/마감은 선사 booking_yn 기준. 최종 부킹·서류·반입 마감은 PLISM에서 확정됩니다.</p>
+  </div>
+</section>
 
 <!-- ===== 부킹 절차 (PLISM 연결) ===== -->
 <section class="section" id="process" style="background:var(--bg)">
@@ -471,6 +601,206 @@
   </div>
 </footer>
 
+<!-- ===== 실시간 스케줄 로더 (PLISM 프록시 /api/schedule) ===== -->
+<script>
+(function () {
+  var PLISM = 'https://farmkogls.plism.com/';
+  // 항구 한글명 (없으면 API 영문명으로 폴백)
+  var PORT_KO = {
+    KRPUS:'부산', KRKAN:'광양', KRINC:'인천', KRUSN:'울산', KRPTK:'평택',
+    INMAA:'첸나이', INKAT:'카투팔리', INNSA:'나바셰바', INCCU:'콜카타', INMUN:'문드라',
+    INPAV:'피파바브', MYPKG:'포트클랑', MYPKW:'웨스트포트', PKKHI:'카라치', OMSOH:'소하르',
+    AEKLF:'코르파칸', AEJEA:'제벨알리', AEDXB:'두바이', SGSIN:'싱가포르', CNSHA:'상하이', LKCMB:'콜롬보'
+  };
+  // POD → 지역 (인도/동남아/파키스탄/중동)
+  var REGION_KO = {
+    INMAA:'인도', INNSA:'인도', INMUN:'인도', INCCU:'인도', INKAT:'인도', INPAV:'인도',
+    MYPKG:'동남아', PKKHI:'파키스탄', OMSOH:'중동', AEKLF:'중동'
+  };
+  var REGION_EN = { '인도':'India', '동남아':'SE Asia', '파키스탄':'Pakistan', '중동':'Middle East', '기타':'Other' };
+
+  var els = {}, DATA = null, GROUPS = [], STATE = 'loading'; // loading | ok | error
+
+  function lang() { try { return localStorage.getItem('farmko_lang') === 'en' ? 'en' : 'ko'; } catch (e) { return 'ko'; } }
+  function t(ko, en) { return lang() === 'en' ? en : ko; }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]; }); }
+  function portName(code, apiName) { return lang() === 'en' ? (apiName || code) : (PORT_KO[code] || apiName || code); }
+  function ttNum(s) { var m = s && String(s).match(/(\d+)/); return m ? parseInt(m[1], 10) : 9999; }
+  function ttLabel(n) { if (n == null || n === 9999) return '-'; return lang() === 'en' ? (n + ' days') : (n + '일'); }
+  function dateCell(v) { if (!v) return '<span class="muted">-</span>'; var p = String(v).split(' '); return esc(p[0]) + (p[1] ? ' <span class="muted">' + esc(p[1]) + '</span>' : ''); }
+  function regionKo(pod) { return REGION_KO[pod] || '기타'; }
+  function regionName(rk) { return lang() === 'en' ? (REGION_EN[rk] || rk) : rk; }
+  function carrierName(g) { return g.carrier && !/팜코/.test(g.carrier) ? esc(g.carrier) : t('팜코지엘에스', 'FARMKO GLS'); }
+
+  // ── list(POD별 행) → 항차 그룹(vessel|voyage) 로 묶기 ──
+  function groupVoyages(list) {
+    var map = {}, order = [];
+    list.forEach(function (r) {
+      var key = (r.vessel || '') + '|' + (r.voyage || '');
+      if (!map[key]) { map[key] = { vessel: r.vessel, voyage: r.voyage, carrier: r.carrier, pol: r.pol, polName: r.polName, etd: r.etd, bookable: false, dests: [] }; order.push(key); }
+      var g = map[key];
+      if (r.bookable) g.bookable = true;
+      r._tt = ttNum(r.tt);
+      g.dests.push(r);
+    });
+    var groups = order.map(function (k) { return map[k]; });
+    groups.forEach(function (g) {
+      g.dests.sort(function (a, b) { return a._tt - b._tt; });
+      var tts = g.dests.map(function (d) { return d._tt; });
+      g.minTT = Math.min.apply(null, tts); g.maxTT = Math.max.apply(null, tts);
+      g.destCount = g.dests.length;
+      var regs = [];
+      g.dests.forEach(function (d) { var rk = regionKo(d.pod); if (regs.indexOf(rk) < 0) regs.push(rk); });
+      g.regions = regs;
+    });
+    return groups;
+  }
+
+  function fillPodSelect() {
+    var sel = els.fPod, keep = sel.value, seen = {}, list = [];
+    GROUPS.forEach(function (g) { g.dests.forEach(function (d) { if (d.pod && !seen[d.pod]) { seen[d.pod] = 1; list.push({ code: d.pod, name: d.podName }); } }); });
+    list.sort(function (a, b) { return portName(a.code, a.name).localeCompare(portName(b.code, b.name)); });
+    var html = '<option value="">' + esc(t('전체 도착항', 'All destinations')) + '</option>';
+    list.forEach(function (p) { html += '<option value="' + esc(p.code) + '">' + esc(portName(p.code, p.name)) + ' (' + esc(p.code) + ')</option>'; });
+    sel.innerHTML = html;
+    if (keep) sel.value = keep;
+  }
+
+  function filteredGroups() {
+    var pod = els.fPod.value, q = (els.fq.value || '').trim().toLowerCase(), only = els.fBookable.checked, sort = els.fSort.value;
+    var arr = GROUPS.filter(function (g) {
+      if (only && !g.bookable) return false;
+      if (pod && !g.dests.some(function (d) { return d.pod === pod; })) return false;
+      if (q && ((g.vessel || '') + ' ' + (g.voyage || '')).toLowerCase().indexOf(q) < 0) return false;
+      return true;
+    });
+    return arr.slice().sort(function (a, b) {
+      if (sort === 'tt') return (a.minTT - b.minTT) || (a.etd < b.etd ? -1 : (a.etd > b.etd ? 1 : 0));
+      return a.etd < b.etd ? -1 : (a.etd > b.etd ? 1 : 0);
+    });
+  }
+
+  function regionChips(g) {
+    var regs = g.regions.slice(), out = regs.slice(0, 2).map(function (r) { return '<span class="voy-region">' + esc(regionName(r)) + '</span>'; });
+    if (regs.length > 2) out.push('<span class="voy-region">+' + (regs.length - 2) + '</span>');
+    return out.join('');
+  }
+
+  function cardHtml(g, i) {
+    var closed = !g.bookable;
+    var status = closed
+      ? '<span class="sbadge sb-cancel">' + t('마감', 'Closed') + '</span>'
+      : '<span class="sbadge sb-conf"><span class="dotb"></span>' + t('가능', 'Bookable') + '</span>';
+    var ttSummary = g.minTT === g.maxTT ? ttLabel(g.minTT) : (lang() === 'en' ? (g.minTT + '–' + g.maxTT + ' days') : (g.minTT + '~' + g.maxTT + '일'));
+    var head = '<div class="voy-head">'
+      + '<div class="voy-main"><b class="voy-vessel">' + esc(g.vessel) + '</b><small class="voy-sub">' + esc(g.voyage) + ' · ' + carrierName(g) + '</small></div>'
+      + '<div class="voy-etd"><span class="voy-lab">' + t('출항 ETD', 'ETD') + '</span><b>' + dateCell(g.etd) + '</b></div>'
+      + '<div class="voy-meta">'
+        + '<span class="voy-podcount"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>' + t('도착항 ' + g.destCount + '곳', g.destCount + ' destinations') + '</span>'
+        + '<span class="voy-regions">' + regionChips(g) + '</span>'
+        + '<span class="voy-tt">T/T ' + ttSummary + '</span>'
+      + '</div>'
+      + '<div class="voy-status">' + status + '</div>'
+      + '<button class="voy-toggle-ic" type="button" aria-expanded="true" aria-controls="voy-body-' + i + '"><span class="sr-only">' + t('세부 도착항 펼치기/접기', 'Expand/collapse destinations') + '</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>'
+      + '</div>';
+    var bhead = '<div class="voy-body-head"><div>' + t('도착항', 'Destination') + '</div><div>' + t('도착 ETA', 'ETA') + '</div><div>T/T</div><div>' + t('서류 · 반입 마감', 'Doc · Cargo close') + '</div><div style="text-align:right">' + t('부킹', 'Booking') + '</div></div>';
+    var rows = g.dests.map(function (d) {
+      var best = d._tt === g.minTT && g.destCount > 1;
+      var book = !d.bookable
+        ? '<span class="btn-mini is-disabled" aria-disabled="true">' + t('부킹 마감', 'Booking closed') + '</span><a class="btn-mini ghost" href="' + PLISM + '" target="_blank" rel="noopener">' + t('PLISM에서 확인 →', 'View on PLISM →') + '</a>'
+        : '<a class="btn-mini" href="' + PLISM + '" target="_blank" rel="noopener">' + t('부킹 →', 'Book →') + '</a>' + (d.bkgClose ? '<span class="voy-bkgclose">' + t('부킹마감 ', 'BKG close ') + esc(d.bkgClose) + '</span>' : '');
+      return '<div class="voy-pod">'
+        + '<div class="voy-pod-name"><b>' + esc(portName(d.pod, d.podName)) + '</b><small>' + esc(d.pod) + ' · ' + esc(String(d.podName || '').toUpperCase()) + '</small></div>'
+        + '<div class="voy-pod-eta" data-l="ETA">' + dateCell(d.eta) + '</div>'
+        + '<div class="voy-pod-tt' + (best ? ' best' : '') + '" data-l="T/T">' + ttLabel(d._tt) + (best ? '<span class="best-tag">' + t('최단', 'fastest') + '</span>' : '') + '</div>'
+        + '<div class="voy-pod-close" data-l="' + t('마감', 'Close') + '"><span><b>' + t('서류', 'Doc') + '</b> ' + (d.docClose ? esc(d.docClose) : '-') + '<br><b>' + t('반입', 'Cargo') + '</b> ' + (d.cargoClose ? esc(d.cargoClose) : '-') + '</span></div>'
+        + '<div class="voy-pod-book">' + book + '</div>'
+      + '</div>';
+    }).join('');
+    return '<div class="voy-card is-open' + (closed ? ' is-closed' : '') + '">' + head
+      + '<div class="voy-body" id="voy-body-' + i + '" role="region" aria-label="' + esc(g.vessel) + ' ' + t('도착항 상세', 'destinations') + '">' + bhead + rows + '</div></div>';
+  }
+
+  function stateBlock(kind) {
+    if (kind === 'error') {
+      return '<div class="voy-state"><svg viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><path d="M12 9v4M12 17h.01"/></svg>'
+        + '<h4>' + t('스케줄을 불러오지 못했습니다', 'Failed to load schedule') + '</h4>'
+        + '<p>' + t('잠시 후 다시 시도해 주세요.', 'Please try again shortly.') + '</p>'
+        + '<div class="row"><button class="btn btn-accent" id="schRetry" type="button">' + t('다시 시도', 'Retry') + '</button>'
+        + '<a class="btn btn-ghost" href="' + PLISM + '" target="_blank" rel="noopener">' + t('PLISM에서 확인 →', 'View on PLISM →') + '</a></div></div>';
+    }
+    return '<div class="voy-state"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>'
+      + '<h4>' + t('조건에 맞는 항차가 없습니다', 'No sailings match your filters') + '</h4>'
+      + '<p>' + t('필터를 초기화하면 전체 스케줄을 볼 수 있습니다.', 'Reset filters to see all sailings.') + '</p>'
+      + '<div class="row"><button class="btn btn-accent" id="schClear" type="button">' + t('필터 초기화', 'Reset filters') + '</button></div></div>';
+  }
+
+  function render() {
+    if (STATE === 'error') {
+      els.count.textContent = t('스케줄을 불러오지 못했습니다', 'Failed to load schedule');
+      els.meta.textContent = '';
+      els.list.innerHTML = stateBlock('error');
+      var rt = document.getElementById('schRetry'); if (rt) rt.addEventListener('click', load);
+      return;
+    }
+    if (STATE === 'loading' || !DATA) {
+      els.count.textContent = t('스케줄 불러오는 중…', 'Loading schedule…');
+      els.meta.textContent = '';
+      els.list.innerHTML = '<div class="empty">' + t('불러오는 중…', 'Loading…') + '</div>';
+      return;
+    }
+    fillPodSelect();
+    var arr = filteredGroups(), total = GROUPS.length;
+    els.count.innerHTML = t('총 <span class="cnt">' + total + '</span>개 항차 · 표시 ' + arr.length + '개', '<span class="cnt">' + total + '</span> sailings · showing ' + arr.length);
+    els.meta.textContent = t('KLNET PLISM 실시간 · farmkogls.plism.com', 'Live from KLNET PLISM · farmkogls.plism.com');
+    if (!arr.length) {
+      els.list.innerHTML = stateBlock('empty');
+      var cl = document.getElementById('schClear'); if (cl) cl.addEventListener('click', resetAll);
+      return;
+    }
+    els.list.innerHTML = arr.map(function (g) { return cardHtml(g, GROUPS.indexOf(g)); }).join('');
+    if (window.matchMedia && window.matchMedia('(max-width:768px)').matches) {
+      els.list.querySelectorAll('.voy-card').forEach(function (c) { c.classList.remove('is-open'); var b = c.querySelector('.voy-toggle-ic'); if (b) b.setAttribute('aria-expanded', 'false'); });
+    }
+  }
+
+  function resetAll() { els.fPod.value = ''; els.fSort.value = 'etd'; els.fBookable.checked = false; els.fq.value = ''; render(); }
+
+  function load() {
+    STATE = 'loading'; render();
+    fetch('/api/schedule', { headers: { Accept: 'application/json' } })
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function (j) { if (!j || j.ok === false || !Array.isArray(j.list)) throw new Error('bad payload'); DATA = j; GROUPS = groupVoyages(j.list); STATE = 'ok'; render(); })
+      .catch(function () { STATE = 'error'; render(); });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    els.fPod = document.getElementById('fPod');
+    els.fSort = document.getElementById('fSort');
+    els.fBookable = document.getElementById('fBookable');
+    els.fq = document.getElementById('fq');
+    els.reset = document.getElementById('fReset');
+    els.list = document.getElementById('voyList');
+    els.count = document.getElementById('schCount');
+    els.meta = document.getElementById('schMeta');
+    if (!els.list) return;
+    els.fPod.addEventListener('change', render);
+    els.fSort.addEventListener('change', render);
+    els.fBookable.addEventListener('change', render);
+    els.fq.addEventListener('input', render);
+    els.reset.addEventListener('click', resetAll);
+    els.list.addEventListener('click', function (e) {
+      var head = e.target.closest('.voy-head'); if (!head) return;
+      var card = head.closest('.voy-card'); if (!card) return;
+      var open = card.classList.toggle('is-open');
+      var b = card.querySelector('.voy-toggle-ic'); if (b) b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // 언어 전환 시 카드도 다시 그림 (i18n 이 localStorage 저장 후)
+    document.querySelectorAll('[data-lang-btn]').forEach(function (b) { b.addEventListener('click', function () { setTimeout(render, 0); }); });
+    load();
+  });
+})();
+</script>
 <script src="assets/i18n.js" defer></script>
 </body>
 </html>
